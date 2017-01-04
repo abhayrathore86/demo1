@@ -1,4 +1,6 @@
 #include<stdio.h>
 void main(){
-	printf("changed text");
+	int a;
+	printf("Enter a:");
+	scanf("%d",&a);
 }
