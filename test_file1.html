@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<br/>
+<center>
+<form name="myForm">
+<table border=1>
+<tr>
+	<td>Name:</td>
+	<td> <input type="text" name="tname"/></td>
+</tr>
+<tr>
+	<td>Age: </td>
+	<td><input type="number" name="age"/></td>
+</tr>
+<tr>
+	<td>Email Id: </td>
+	<td><input type="email" name="mail"/></td>
+</tr>
+
+<tr>
+	<td>Password: </td>
+	<td><input type="password" name="pwd"/></td>
+</tr>
+<tr>
+	<td colspan="2" align="center"><button onclick="submitFunction()">Submit</button></td>
+</tr>
+</table>
+</form>
+
+<br/>
+<div id="dvTable">
+</div>
+<table id="dTable" border="1">
+	
+</table>
+</center>
+
+<script>
+/*
+//var arr1 = [5,4,3,2,1];
+//document.getElementById("demo").innerHTML = arr1.sort();
+/*var cars = [
+{type:"Volvo", year:2016},
+{type:"Saab", year:2001},
+{type:"BMW", year:2010}]
+
+displayCars();
+
+function myFunction() {
+    cars.sort();
+    displayCars();
+}
+var fruits=["mango","apple","kiwi","banana"]
+function displayCars() {
+  document.getElementById("demo").innerHTML =
+  cars[0].type + " " + cars[0].year + "<br>" +
+  cars[1].type + " " + cars[1].year + "<br>" +
+  cars[2].type + " " + cars[2].year;
+}
+fruits.pop();
+document.getElementById("demo1").innerHTML= "5" - 2;
+
+function myFunction1(){
+
+	alert("this is myFunction1");
+}
+
+function fun2(){
+
+	alert("this is fun2");
+}
+var str1="Visit W3Schools";
+var n=str1.search(/w3schools/i);
+document.getElementById("demo2").innerHTML = /e/.exec("Hllo");
+var a=10;
+try{
+	//addlert("Welcome Guest!") 
+	//if (a == 10 ) throw "tesing throw";
+	var num=3;
+	num.toUppercase();
+
+}
+catch(err){
+	document.getElementById("demo1").innerHTML = err.name;
+}
+finally {
+	document.getElementById("demo2").innerHTML = /e/.exec("Hello");
+}*/
+//"use strict";
+/*var text='{ "employees" : ['+ '{ "firstName":"abc","lastName":"def"},'+ '{ "firstName":"jack" ,"lastName":"Anna"} ]}';
+var obj=JSON.parse(text);
+var data=obj.employees[0].firstName;
+document.getElementById("demo").innerHTML=data;*/
+function submitFunction(){
+	
+	var frm=document.forms["myForm"];
+	var name=frm.elements["tname"].value;
+	var age=frm.elements["age"].value;
+	var email=frm.elements["mail"].value;
+	var pwd=frm.elements["pwd"].value;
+	//alert(name+" "+age+" "+email+" "+pwd);
+	/*document.getElementById("demo").innerHTML=name;
+	document.writeln(age);
+	document.writeln(email);
+	document.writeln(pwd);*/
+
+	var user=[];
+	user.push(["Name","Age","Email Id","Password"]);
+
+	var table = document.createElement("dTable");
+	table.border="1"; 
+
+	var columnCount=user[0].length;
+
+	var row = table.insertRow(0);
+    var cellname = row.insertCell(0);
+    cellname.innerHTML = name;
+    var cellage = row.insertCell(1);
+    cellage.innerHTML = age;
+    var cellemail = row.insertCell(2);
+    cellemail.innerHTML = email;
+    var cellpwd = row.insertCell(3);
+    cellpwd.innerHTML = pwd;
+    
+    var dvTable = document.getElementById("dvTable");
+    dvTable.innerHTML = "";
+    dvTable.appendChild(table);
+
+	/*var row1 = table.insertRow(0);
+	var row1col1 = row1.insertCell(0);
+    row1col1.innerHTML = name;
+    var row1col2 = row1.insertCell(1);
+    row1col2.innerHTML = age;
+    var row1col3 = row1.insertCell(2);
+    row1col3.innerHTML = email;
+    var row1col4 = row1.insertCell(3);
+    row1col3.innerHTML = pwd;
+    var div = document.getElementById("divTable");
+    div.appendChild(table);*/
+}
+</script>
+
+</body>
+</html>
