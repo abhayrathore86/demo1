@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <style>
-       table, td {
-           border: 1px solid black;
-       }
-   </style>
+​ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<center>
 
-   <table id="myTable">
-       <tr>
+<center>
+<div class="container">
+   <table id="myTable" class="table">
+   <thead>
+       <tr class="success">
            <td>
                <p>First name :</p>
            </td>
@@ -19,7 +21,7 @@
                <input id="f" type="text" required>
            </td>
        </tr>
-       <tr>
+       <tr class="danger">
            <td>
                <p>Last name :</p>
            </td>
@@ -27,22 +29,36 @@
                <input id="l" type="text" required>
            </td>
        </tr>
-       <tr>
+       <tr class="info">
+           <td>
+               <p>Phone number :</p>
+           </td>
+           <td id="addNum">
+               <input id="pnum" type="text" maxlength="10" >
+               <button id="addn" onclick="addFun()">+</button>
+               <button id="minusn" onclick="minusFun()">-</button>
+           </td>
+       </tr>
+       <tr class="warning">
            <td>
                <button onclick="myFunction()">OK</button>
            </td>
        </tr>
+       </thead>
    </table>
+   </div>
+   
    <div id="dvTable">
    </div>
    <br><br>
-   <table id="DTable">
+   <table id="DTable" class="table">
 
    </table>
-   <p id="demo"></p></center>
-
+</center>  
 <script>
    var flag = 0;
+   var countNum=0;
+  
    function myFunction() {
 
 
@@ -54,7 +70,7 @@
        else {
            //Build an array containing Customer records.
            var customers = new Array();
-           customers.push(["First name", "Last name", "edit"]);
+           customers.push(["First name", "Last name","Phone number","edit"]);
 
 
            //Create a HTML Table element.
@@ -72,6 +88,14 @@
            d.value = "";
            var d = document.getElementById("l");
            d.value = "";
+           /*var d = document.getElementById("pnum");
+           d.value = "";
+           for (var i = 1; i <= countNum; i++) {
+                 var d = document.getElementById("pnum"+i);
+               d.value = "";
+               }*/
+           /*var d = document.getElementById("pnum");
+           d.value = "";*/
 
            if (flag == 1) {
                document.getElementById("DTable").deleteRow(this);
@@ -84,7 +108,19 @@
            cellf.innerHTML = f;
            var celll = row.insertCell(1);
            celll.innerHTML = l;
-           var cell = row.insertCell(2);
+           var cellp = row.insertCell(2);
+           var phone=[];
+           phone[0]=document.getElementById("pnum").value;
+           for (var i = 1; i <= countNum; i++) {
+              phone[i]=document.getElementById("pnum"+i).value;
+           }    
+           cellp.innerHTML=phone.toString();
+
+            var cell = row.insertCell(3);
+
+
+
+
 
 
            var element = document.createElement("input");
@@ -100,6 +136,17 @@
                var t = celll.innerHTML;
                var d = document.getElementById("l");
                d.value = t;
+
+               var t = cellp.innerHTML;
+               t.toArray();
+                var d = document.getElementById("pnum");
+               d.value = t[0];
+               for (var i = 1; i <= countNum; i++) {
+                 var d = document.getElementById("pnum"+i);
+               d.value = t[i];
+               }
+               
+
            };
            cell.appendChild(element);
 
@@ -110,7 +157,28 @@
        }
 
    }
+    function addFun(){
+      countNum++;
+      //var inp=document.getElementById("myTable").rows[2].cells[1].innerHTML;
+      document.getElementById("myTable").rows[2].cells[1].innerHTML +="<br/><input id='pnum"+countNum+"'type='text' maxlength='10' >";
+      //alert(inp);
+   }
+
+
+   function minusFun(){
+      var inp=document.getElementById("myTable").rows[2].cells[1].innerHTML;
+      if (countNum > 0) {
+        document.getElementById("pnum"+countNum).remove();
+        countNum--;
+      }
+      else{
+
+          alert("Can not remove phone number field");
+      }
+
+   }
 
 </script>
+
 </body>
 </html>
