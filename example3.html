@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSV READ DEMO</title>
+<script type="text/javascript" src="getzip.js">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+</script>
+</head>
+<body>
+<div class="container">
+<table>
+	<tr>
+		<td>Zip Code:</td>
+		<td><select name="zipcode"  id="zip" onchange="getZipInfo(this.value)">
+			<option value="">Select ZipCode</option>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td>Country Code:</td>
+		<td><p id="country"></p>
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"><button onclick="getInfo()" class="btn btn-info">Get Fields</button></td>
+	</tr>
+</table>
+<select multiple="multiple" style="height:200px ;width:200px" id="s1">
+ <option></option>
+</select>
+<button onclick="LtoRSingle()" class="btn btn-info">></button>
+<button onclick="LtoRDouble()" class="btn btn-info">>></button>
+<button onclick="RtoLSingle()" class="btn btn-info"><</button>
+<button onclick="RtoLDouble()" class="btn btn-info"><<</button>
+<select multiple style="height:200px ;width:200px" id="s2">
+  
+</select>
+<button onclick="up()">^</button>
+<button onclick="down()">v</button>
+<button onclick="getData()" class="btn btn-info">Get Data</button>
+<br>
+<h2><p id="count"></p></h2>
+<div id="div1"></div>
+</div>
+</body>
+</html>
