@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
 ​ <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,6 +15,19 @@
    <table id="myTable" class="table">
    <thead>
        <tr class="success">
+=======
+   <style>
+       table, td {
+           border: 1px solid black;
+       }
+   </style>
+</head>
+<body>
+<center>
+
+   <table id="myTable">
+       <tr>
+>>>>>>> master
            <td>
                <p>First name :</p>
            </td>
@@ -21,7 +35,11 @@
                <input id="f" type="text" required>
            </td>
        </tr>
+<<<<<<< HEAD
        <tr class="danger">
+=======
+       <tr>
+>>>>>>> master
            <td>
                <p>Last name :</p>
            </td>
@@ -29,6 +47,7 @@
                <input id="l" type="text" required>
            </td>
        </tr>
+<<<<<<< HEAD
        <tr class="info">
            <td>
                <p>Phone number :</p>
@@ -40,10 +59,14 @@
            </td>
        </tr>
        <tr class="warning">
+=======
+       <tr>
+>>>>>>> master
            <td>
                <button onclick="myFunction()">OK</button>
            </td>
        </tr>
+<<<<<<< HEAD
        </thead>
    </table>
    </div>
@@ -59,6 +82,19 @@
    var flag = 0;
    var countNum=0;
   
+=======
+   </table>
+   <div id="dvTable">
+   </div>
+   <br><br>
+   <table id="DTable">
+
+   </table>
+   <p id="demo"></p></center>
+
+<script>
+   var flag = 0;
+>>>>>>> master
    function myFunction() {
 
 
@@ -70,7 +106,11 @@
        else {
            //Build an array containing Customer records.
            var customers = new Array();
+<<<<<<< HEAD
            customers.push(["First name", "Last name","Phone number","edit"]);
+=======
+           customers.push(["First name", "Last name", "edit"]);
+>>>>>>> master
 
 
            //Create a HTML Table element.
@@ -88,6 +128,7 @@
            d.value = "";
            var d = document.getElementById("l");
            d.value = "";
+<<<<<<< HEAD
            /*var d = document.getElementById("pnum");
            d.value = "";
            for (var i = 1; i <= countNum; i++) {
@@ -96,6 +137,8 @@
                }*/
            /*var d = document.getElementById("pnum");
            d.value = "";*/
+=======
+>>>>>>> master
 
            if (flag == 1) {
                document.getElementById("DTable").deleteRow(this);
@@ -108,6 +151,7 @@
            cellf.innerHTML = f;
            var celll = row.insertCell(1);
            celll.innerHTML = l;
+<<<<<<< HEAD
            var cellp = row.insertCell(2);
            var phone=[];
            phone[0]=document.getElementById("pnum").value;
@@ -121,6 +165,9 @@
 
 
 
+=======
+           var cell = row.insertCell(2);
+>>>>>>> master
 
 
            var element = document.createElement("input");
@@ -136,6 +183,7 @@
                var t = celll.innerHTML;
                var d = document.getElementById("l");
                d.value = t;
+<<<<<<< HEAD
 
                var t = cellp.innerHTML;
                t.toArray();
@@ -147,6 +195,8 @@
                }
                
 
+=======
+>>>>>>> master
            };
            cell.appendChild(element);
 
@@ -157,6 +207,7 @@
        }
 
    }
+<<<<<<< HEAD
     function addFun(){
       countNum++;
       //var inp=document.getElementById("myTable").rows[2].cells[1].innerHTML;
@@ -180,5 +231,9 @@
 
 </script>
 
+=======
+
+</script>
+>>>>>>> master
 </body>
 </html>
